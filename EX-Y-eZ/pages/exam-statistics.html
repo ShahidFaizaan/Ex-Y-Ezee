@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Statistics | Indian Entrance Exams Portal</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Entrance Exams Portal</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="entrance-exams.html">Entrance Exams</a></li>
+                <li><a href="international-exams.html">Study Abroad</a></li>
+                <li><a href="college-list.html">Colleges</a></li>
+                <li><a href="exam-statistics.html" class="active">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Entrance Exam Statistics</h2>
+            <p>Explore detailed statistics about entrance exam participation across different regions of India.</p>
+        </div>
+        
+        <div id="user-preferences" class="hidden"></div>
+        
+        <div class="statistics-container">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>Regional Distribution of Exam Participants</h3>
+                    <div class="chart-filters">
+                        <select id="exam-select" class="filter-select">
+                            <option value="all">All Exams</option>
+                            <!-- Will be populated by JavaScript -->
+                        </select>
+                    </div>
+                </div>
+                <div class="chart-area">
+                    <canvas id="regional-chart"></canvas>
+                </div>
+                <p class="chart-description mt-1">
+                    This chart shows the distribution of students taking entrance exams across different regions of India. 
+                    The data highlights regional participation patterns and can help identify areas with higher competition.
+                </p>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>Exam Popularity Comparison</h3>
+                    <div class="chart-filters">
+                        <select id="category-select" class="filter-select">
+                            <option value="all">All Categories</option>
+                            <!-- Will be populated by JavaScript -->
+                        </select>
+                    </div>
+                </div>
+                <div class="chart-area">
+                    <canvas id="popularity-chart"></canvas>
+                </div>
+                <p class="chart-description mt-1">
+                    This chart compares the total number of students taking various entrance exams across India. 
+                    It provides insights into which exams are most popular and have the highest competition.
+                </p>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>Category-wise Distribution</h3>
+                </div>
+                <div class="chart-area">
+                    <canvas id="category-chart"></canvas>
+                </div>
+                <p class="chart-description mt-1">
+                    This chart shows the distribution of entrance exam participants by exam category. 
+                    It helps understand which fields (Engineering, Medical, etc.) are most sought after by students.
+                </p>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>Student-College Ratio by Region</h3>
+                </div>
+                <div class="chart-area">
+                    <canvas id="ratio-chart"></canvas>
+                </div>
+                <p class="chart-description mt-1">
+                    This chart displays the ratio of students appearing for entrance exams to the number of colleges available in each region.
+                    A higher ratio indicates more competition for available seats.
+                </p>
+            </div>
+            
+            <section class="insights">
+                <h3>Key Insights from the Data</h3>
+                
+                <div class="insight-card">
+                    <h4><i class="fas fa-chart-line"></i> Regional Participation Trends</h4>
+                    <p>North India consistently shows the highest participation in most entrance exams, followed by South India. This pattern is particularly pronounced in engineering and medical entrance exams. The high participation rates in these regions correlate with the greater number of premier institutions located there.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <h4><i class="fas fa-users"></i> Competition Analysis</h4>
+                    <p>Engineering and Medical exams have the highest participation across all regions, reflecting these fields' continued popularity and perceived career stability. JEE Main and NEET-UG see over 1.5 million applicants each year, making them the most competitive exams in India.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <h4><i class="fas fa-balance-scale"></i> Student-College Ratio Implications</h4>
+                    <p>Despite having fewer colleges, Northeast India has a better student-to-college ratio due to lower exam participation. Conversely, North India has the highest competition for available seats, with more students competing for each college spot.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <h4><i class="fas fa-globe-asia"></i> Geographic Disparities</h4>
+                    <p>There are significant disparities in exam participation between urban and rural areas. Urban centers contribute disproportionately to the total participation numbers, highlighting issues of access and awareness in rural regions.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <h4><i class="fas fa-graduation-cap"></i> Educational Infrastructure Correlation</h4>
+                    <p>Regions with better pre-college educational infrastructure (coaching centers, schools with advanced facilities) show higher participation rates and success percentages in competitive exams.</p>
+                </div>
+            </section>
+            
+            <section class="regions-info mt-2">
+                <h3>Region-wise States in India</h3>
+                
+                <div class="custom-table-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Region</th>
+                                <th>States & Union Territories</th>
+                            </tr>
+                        </thead>
+                        <tbody id="region-states-table">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Entrance Exams Portal</h3>
+                <p>Your comprehensive guide to entrance exams in India and abroad.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="entrance-exams.html">Entrance Exams</a></li>
+                    <li><a href="international-exams.html">Study Abroad</a></li>
+                    <li><a href="college-list.html">Colleges</a></li>
+                    <li><a href="exam-statistics.html">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Exam Calendar</a></li>
+                    <li><a href="#">Study Materials</a></li>
+                    <li><a href="#">Counseling Services</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: info@entranceexamsportal.com</p>
+                <p>Phone: +91 9876543210</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Entrance Exams Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Populate exam select dropdown
+            const examSelect = document.getElementById('exam-select');
+            const examNames = Object.keys(EXAM_STATISTICS);
+            
+            examNames.forEach(examName => {
+                const option = document.createElement('option');
+                option.value = examName;
+                option.textContent = examName;
+                examSelect.appendChild(option);
+            });
+            
+            // Populate category select dropdown
+            const categorySelect = document.getElementById('category-select');
+            const categories = [];
+            
+            ENTRANCE_EXAMS.forEach(exam => {
+                if (!categories.includes(exam.category)) {
+                    categories.push(exam.category);
+                }
+            });
+            
+            categories.sort().forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categorySelect.appendChild(option);
+            });
+            
+            // Populate region states table
+            const regionStatesTable = document.getElementById('region-states-table');
+            for (const [region, states] of Object.entries(REGION_STATES)) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${region}</td>
+                    <td>${states.join(', ')}</td>
+                `;
+                regionStatesTable.appendChild(row);
+            }
+            
+            // Initialize charts
+            initRegionalChart();
+            initPopularityChart();
+            initCategoryChart();
+            initRatioChart();
+            
+            // Add event listeners to filters
+            examSelect.addEventListener('change', initRegionalChart);
+            categorySelect.addEventListener('change', initPopularityChart);
+            
+            // Regional distribution chart
+            function initRegionalChart() {
+                const ctx = document.getElementById('regional-chart').getContext('2d');
+                const selectedExam = examSelect.value;
+                
+                let chartData = {
+                    labels: [],
+                    datasets: []
+                };
+                
+                if (selectedExam === 'all') {
+                    // Get all regions
+                    const regions = Object.keys(REGION_STATES);
+                    chartData.labels = regions;
+                    
+                    // For each exam, create a dataset
+                    examNames.forEach(examName => {
+                        const examData = [];
+                        regions.forEach(region => {
+                            examData.push(EXAM_STATISTICS[examName][region] || 0);
+                        });
+                        
+                        chartData.datasets.push({
+                            label: examName,
+                            data: examData,
+                            backgroundColor: getRandomColor(),
+                            borderColor: getRandomColor(),
+                            borderWidth: 1
+                        });
+                    });
+                } else {
+                    // Get data for the selected exam
+                    const examData = EXAM_STATISTICS[selectedExam];
+                    chartData.labels = Object.keys(examData);
+                    
+                    chartData.datasets.push({
+                        label: selectedExam,
+                        data: Object.values(examData),
+                        backgroundColor: getRandomColor(),
+                        borderColor: getRandomColor(),
+                        borderWidth: 1
+                    });
+                }
+                
+                // Check if we already have a chart instance
+                if (window.regionalChart) {
+                    window.regionalChart.destroy();
+                }
+                
+                window.regionalChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: chartData,
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Number of Students'
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Region'
+                                }
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Regional Distribution of Exam Participants'
+                            },
+                            legend: {
+                                position: 'top',
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Exam popularity chart
+            function initPopularityChart() {
+                const ctx = document.getElementById('popularity-chart').getContext('2d');
+                const selectedCategory = categorySelect.value;
+                
+                let chartData = {
+                    labels: [],
+                    datasets: [{
+                        label: 'Total Participants',
+                        data: [],
+                        backgroundColor: [],
+                        borderColor: [],
+                        borderWidth: 1
+                    }]
+                };
+                
+                let filteredExams = Object.keys(EXAM_STATISTICS);
+                
+                if (selectedCategory !== 'all') {
+                    // Filter exams by category
+                    const categoryExams = ENTRANCE_EXAMS
+                        .filter(exam => exam.category === selectedCategory)
+                        .map(exam => exam.name);
+                    
+                    filteredExams = filteredExams.filter(examName => 
+                        categoryExams.includes(examName)
+                    );
+                }
+                
+                // Calculate total participants for each exam
+                const examTotals = [];
+                
+                filteredExams.forEach(examName => {
+                    const examData = EXAM_STATISTICS[examName];
+                    const total = Object.values(examData).reduce((sum, count) => sum + count, 0);
+                    
+                    examTotals.push({
+                        name: examName,
+                        total: total
+                    });
+                });
+                
+                // Sort by total participants
+                examTotals.sort((a, b) => b.total - a.total);
+                
+                // Prepare chart data
+                chartData.labels = examTotals.map(exam => exam.name);
+                chartData.datasets[0].data = examTotals.map(exam => exam.total);
+                
+                // Generate colors
+                examTotals.forEach(() => {
+                    const color = getRandomColor();
+                    chartData.datasets[0].backgroundColor.push(color);
+                    chartData.datasets[0].borderColor.push(color);
+                });
+                
+                // Check if we already have a chart instance
+                if (window.popularityChart) {
+                    window.popularityChart.destroy();
+                }
+                
+                window.popularityChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: chartData,
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Number of Students'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Exam'
+                                }
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Exam Popularity Comparison'
+                            },
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Category distribution chart
+            function initCategoryChart() {
+                const ctx = document.getElementById('category-chart').getContext('2d');
+                
+                // Map exams to categories
+                const examCategories = {};
+                ENTRANCE_EXAMS.forEach(exam => {
+                    examCategories[exam.name] = exam.category;
+                });
+                
+                // Calculate totals by category
+                const categoryTotals = {};
+                
+                Object.keys(EXAM_STATISTICS).forEach(examName => {
+                    const category = examCategories[examName] || 'Other';
+                    const examData = EXAM_STATISTICS[examName];
+                    const total = Object.values(examData).reduce((sum, count) => sum + count, 0);
+                    
+                    if (!categoryTotals[category]) {
+                        categoryTotals[category] = 0;
+                    }
+                    
+                    categoryTotals[category] += total;
+                });
+                
+                // Prepare chart data
+                const labels = Object.keys(categoryTotals);
+                const data = Object.values(categoryTotals);
+                const backgroundColors = labels.map(() => getRandomColor());
+                
+                window.categoryChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Total Participants',
+                            data: data,
+                            backgroundColor: backgroundColors,
+                            borderColor: 'white',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Category-wise Distribution of Exam Participants'
+                            },
+                            legend: {
+                                position: 'right',
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Student-College Ratio chart
+            function initRatioChart() {
+                const ctx = document.getElementById('ratio-chart').getContext('2d');
+                
+                // Calculate student totals by region
+                const regionStudentTotals = {};
+                const regions = Object.keys(REGION_STATES);
+                
+                regions.forEach(region => {
+                    regionStudentTotals[region] = 0;
+                });
+                
+                Object.keys(EXAM_STATISTICS).forEach(examName => {
+                    const examData = EXAM_STATISTICS[examName];
+                    
+                    regions.forEach(region => {
+                        if (examData[region]) {
+                            regionStudentTotals[region] += examData[region];
+                        }
+                    });
+                });
+                
+                // Calculate college totals by region
+                const regionCollegeTotals = {};
+                
+                regions.forEach(region => {
+                    regionCollegeTotals[region] = 0;
+                });
+                
+                Object.keys(COLLEGE_STATISTICS).forEach(category => {
+                    const categoryData = COLLEGE_STATISTICS[category];
+                    
+                    regions.forEach(region => {
+                        if (categoryData[region]) {
+                            regionCollegeTotals[region] += categoryData[region];
+                        }
+                    });
+                });
+                
+                // Calculate ratios
+                const ratios = [];
+                
+                regions.forEach(region => {
+                    const students = regionStudentTotals[region];
+                    const colleges = regionCollegeTotals[region];
+                    
+                    ratios.push({
+                        region: region,
+                        ratio: colleges > 0 ? Math.round(students / colleges) : 0
+                    });
+                });
+                
+                // Sort by ratio
+                ratios.sort((a, b) => b.ratio - a.ratio);
+                
+                // Prepare chart data
+                const chartData = {
+                    labels: ratios.map(item => item.region),
+                    datasets: [{
+                        label: 'Students per College',
+                        data: ratios.map(item => item.ratio),
+                        backgroundColor: 'rgba(212, 167, 106, 0.7)',
+                        borderColor: '#D4A76A',
+                        borderWidth: 1
+                    }]
+                };
+                
+                window.ratioChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: chartData,
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Students per College'
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Region'
+                                }
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Student-College Ratio by Region'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.raw + ' students per college';
+                                    }
+                                }
+                            },
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Helper function to generate random colors
+            function getRandomColor() {
+                const colors = [
+                    'rgba(212, 167, 106, 0.7)',   // Primary color (from CSS variables)
+                    'rgba(179, 128, 70, 0.7)',    // Secondary color
+                    'rgba(230, 217, 190, 0.7)',   // Border color
+                    'rgba(240, 228, 200, 0.7)',   // Header background
+                    'rgba(230, 217, 190, 0.7)',   // Footer background
+                    'rgba(77, 148, 255, 0.7)',    // Blue
+                    'rgba(255, 99, 132, 0.7)',    // Red
+                    'rgba(75, 192, 192, 0.7)',    // Teal
+                    'rgba(255, 159, 64, 0.7)',    // Orange
+                    'rgba(153, 102, 255, 0.7)',   // Purple
+                    'rgba(255, 205, 86, 0.7)',    // Yellow
+                    'rgba(54, 162, 235, 0.7)'     // Light blue
+                ];
+                
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+        });
+    </script>
+</body>
+</html>

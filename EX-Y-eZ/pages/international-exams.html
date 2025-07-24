@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Abroad Exams | Indian Entrance Exams Portal</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Entrance Exams Portal</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="entrance-exams.html">Entrance Exams</a></li>
+                <li><a href="international-exams.html" class="active">Study Abroad</a></li>
+                <li><a href="college-list.html">Colleges</a></li>
+                <li><a href="exam-statistics.html">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Study Abroad: International Exams Guide</h2>
+            <p>Comprehensive information about international entrance exams for students looking to pursue education overseas.</p>
+        </div>
+        
+        <div id="user-preferences" class="hidden"></div>
+        
+        <section class="study-abroad-intro">
+            <h3>Studying Abroad: An Overview</h3>
+            <p>Studying abroad offers a unique opportunity to experience different cultures, education systems, and perspectives. International degrees are highly valued in the global job market and can provide a competitive edge in your career. Here's what you need to know about preparing for international education:</p>
+            
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button" data-tab="why-study-abroad">Why Study Abroad?</button>
+                    <button class="tab-button" data-tab="popular-destinations">Popular Destinations</button>
+                    <button class="tab-button" data-tab="application-process">Application Process</button>
+                    <button class="tab-button" data-tab="financial-planning">Financial Planning</button>
+                </div>
+                
+                <div id="why-study-abroad" class="tab-content">
+                    <h3>Why Study Abroad?</h3>
+                    <ul>
+                        <li><strong>Global Exposure:</strong> Experience diverse cultures, teaching methods, and perspectives.</li>
+                        <li><strong>Quality Education:</strong> Access to world-class universities and educational resources.</li>
+                        <li><strong>Career Opportunities:</strong> Enhanced employability and a competitive edge in the global job market.</li>
+                        <li><strong>Personal Growth:</strong> Develop independence, adaptability, and cross-cultural communication skills.</li>
+                        <li><strong>Networking:</strong> Build an international network of peers, professionals, and mentors.</li>
+                        <li><strong>Language Skills:</strong> Immerse yourself in a foreign language environment for rapid improvement.</li>
+                        <li><strong>Research Opportunities:</strong> Access to advanced research facilities and collaborations.</li>
+                    </ul>
+                </div>
+                
+                <div id="popular-destinations" class="tab-content">
+                    <h3>Popular Study Destinations</h3>
+                    
+                    <div class="country-info">
+                        <h4>United States</h4>
+                        <p><strong>Key Exams:</strong> SAT/ACT (Undergraduate), GRE/GMAT (Graduate), TOEFL/IELTS (English Proficiency)</p>
+                        <p><strong>Popular Fields:</strong> Computer Science, Engineering, Business, Liberal Arts</p>
+                        <p><strong>Top Universities:</strong> Harvard, MIT, Stanford, Columbia, Yale</p>
+                        <p><strong>Average Tuition:</strong> $25,000-$60,000 per year</p>
+                    </div>
+                    
+                    <div class="country-info">
+                        <h4>United Kingdom</h4>
+                        <p><strong>Key Exams:</strong> UCAS (Undergraduate), GMAT/GRE (Graduate), IELTS/PTE (English Proficiency)</p>
+                        <p><strong>Popular Fields:</strong> Business, Law, Medicine, Engineering, Arts</p>
+                        <p><strong>Top Universities:</strong> Oxford, Cambridge, Imperial College London, LSE</p>
+                        <p><strong>Average Tuition:</strong> £10,000-£38,000 per year</p>
+                    </div>
+                    
+                    <div class="country-info">
+                        <h4>Canada</h4>
+                        <p><strong>Key Exams:</strong> IELTS/TOEFL (English Proficiency), GRE/GMAT (Graduate)</p>
+                        <p><strong>Popular Fields:</strong> Engineering, Computer Science, Business, Medicine</p>
+                        <p><strong>Top Universities:</strong> University of Toronto, McGill, UBC, University of Alberta</p>
+                        <p><strong>Average Tuition:</strong> CAD 20,000-35,000 per year</p>
+                    </div>
+                    
+                    <div class="country-info">
+                        <h4>Australia</h4>
+                        <p><strong>Key Exams:</strong> IELTS/PTE (English Proficiency), GRE/GMAT (Graduate)</p>
+                        <p><strong>Popular Fields:</strong> Engineering, Business, Information Technology, Hospitality</p>
+                        <p><strong>Top Universities:</strong> University of Melbourne, Australian National University, University of Sydney</p>
+                        <p><strong>Average Tuition:</strong> AUD 20,000-45,000 per year</p>
+                    </div>
+                    
+                    <div class="country-info">
+                        <h4>Germany</h4>
+                        <p><strong>Key Exams:</strong> TestDaF/DSH (German Proficiency), GRE (Graduate), IELTS/TOEFL (English Proficiency)</p>
+                        <p><strong>Popular Fields:</strong> Engineering, Physical Sciences, Business</p>
+                        <p><strong>Top Universities:</strong> Technical University of Munich, Ludwig Maximilian University, Heidelberg University</p>
+                        <p><strong>Average Tuition:</strong> Most public universities are tuition-free (Administrative fees: €100-350 per semester)</p>
+                    </div>
+                    
+                    <div class="country-info">
+                        <h4>Singapore</h4>
+                        <p><strong>Key Exams:</strong> IELTS/TOEFL (English Proficiency), GRE/GMAT (Graduate)</p>
+                        <p><strong>Popular Fields:</strong> Engineering, Business, Computer Science</p>
+                        <p><strong>Top Universities:</strong> National University of Singapore, Nanyang Technological University</p>
+                        <p><strong>Average Tuition:</strong> SGD 25,000-40,000 per year</p>
+                    </div>
+                </div>
+                
+                <div id="application-process" class="tab-content">
+                    <h3>Application Process Overview</h3>
+                    
+                    <ol>
+                        <li>
+                            <strong>Research Institutions and Programs (12-18 months before)</strong>
+                            <p>Research universities, programs, admission requirements, deadlines, and costs.</p>
+                        </li>
+                        <li>
+                            <strong>Prepare for and Take Required Exams (12-15 months before)</strong>
+                            <p>Register for and complete required standardized tests (IELTS/TOEFL, GRE/GMAT, SAT/ACT).</p>
+                        </li>
+                        <li>
+                            <strong>Shortlist Universities (10-12 months before)</strong>
+                            <p>Create a balanced list of reach, target, and safety schools.</p>
+                        </li>
+                        <li>
+                            <strong>Prepare Application Materials (8-10 months before)</strong>
+                            <p>Work on personal statements, essays, CV/resume, and secure recommendation letters.</p>
+                        </li>
+                        <li>
+                            <strong>Submit Applications (6-8 months before)</strong>
+                            <p>Complete and submit applications before deadlines. Pay application fees.</p>
+                        </li>
+                        <li>
+                            <strong>Apply for Financial Aid/Scholarships (Concurrent with applications)</strong>
+                            <p>Research and apply for scholarships, grants, and financial aid opportunities.</p>
+                        </li>
+                        <li>
+                            <strong>Receive Admission Decisions (3-6 months before)</strong>
+                            <p>Review admission offers and make your final decision.</p>
+                        </li>
+                        <li>
+                            <strong>Apply for Student Visa (3-4 months before)</strong>
+                            <p>Gather required documents and apply for a student visa.</p>
+                        </li>
+                        <li>
+                            <strong>Pre-departure Preparations (1-3 months before)</strong>
+                            <p>Arrange accommodation, health insurance, and travel plans.</p>
+                        </li>
+                    </ol>
+                </div>
+                
+                <div id="financial-planning" class="tab-content">
+                    <h3>Financial Planning for Studying Abroad</h3>
+                    
+                    <h4>Estimated Costs to Consider</h4>
+                    <ul>
+                        <li><strong>Tuition Fees:</strong> The primary expense, varying significantly by country and institution.</li>
+                        <li><strong>Living Expenses:</strong> Accommodation, food, utilities, transportation, and personal expenses.</li>
+                        <li><strong>Health Insurance:</strong> Mandatory in most countries for international students.</li>
+                        <li><strong>Travel Costs:</strong> Flights to and from your home country, local travel.</li>
+                        <li><strong>Application Fees:</strong> For universities and standardized tests.</li>
+                        <li><strong>Visa Fees:</strong> Application and processing fees for student visas.</li>
+                        <li><strong>Books and Supplies:</strong> Academic materials and equipment.</li>
+                        <li><strong>Emergency Fund:</strong> For unexpected expenses.</li>
+                    </ul>
+                    
+                    <h4>Funding Options</h4>
+                    <ul>
+                        <li><strong>Scholarships:</strong> Merit-based, need-based, country-specific, or subject-specific.</li>
+                        <li><strong>Education Loans:</strong> From banks or specialized education loan providers.</li>
+                        <li><strong>Grants and Fellowships:</strong> For research or specific fields of study.</li>
+                        <li><strong>Work-Study Programs:</strong> Part-time employment opportunities on campus.</li>
+                        <li><strong>Teaching/Research Assistantships:</strong> For graduate students.</li>
+                        <li><strong>Family Support:</strong> Financial assistance from family members.</li>
+                        <li><strong>Personal Savings:</strong> Using savings to fund education.</li>
+                    </ul>
+                    
+                    <h4>Tips for Financial Management</h4>
+                    <ul>
+                        <li>Create a detailed budget and track expenses regularly.</li>
+                        <li>Research and apply for multiple scholarships and financial aid options.</li>
+                        <li>Consider countries with lower tuition fees or cost of living.</li>
+                        <li>Explore work opportunities available to international students.</li>
+                        <li>Open a local bank account to avoid foreign transaction fees.</li>
+                        <li>Look for student discounts on transportation, entertainment, and services.</li>
+                        <li>Check if your home country offers any grants or loans for international education.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <div class="exam-container mt-2">
+            <div class="exam-filter">
+                <div class="filters">
+                    <h3>Filter International Exams</h3>
+                    
+                    <div class="filter-group">
+                        <label for="search-input">Search:</label>
+                        <input type="text" id="search-input" placeholder="Search by exam name...">
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Type</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="type" value="English Proficiency"> English Proficiency</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="type" value="Undergraduate Admission"> Undergraduate Admission</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="type" value="Graduate Admission"> Graduate Admission</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="type" value="Business School"> Business School</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Difficulty Level</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="Beginner"> Beginner</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="Intermediate"> Intermediate</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="Advanced"> Advanced</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="sort-select">Sort By:</label>
+                        <select id="sort-select">
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="name-desc">Name (Z-A)</option>
+                            <option value="popularity">Popularity</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exam-list" id="international-exams-container">
+                <!-- International exams will be populated dynamically using JavaScript -->
+            </div>
+        </div>
+        
+        <section class="preparation-resources mt-2">
+            <h2>Resources for International Exam Preparation</h2>
+            
+            <div class="resource-cards">
+                <div class="resource-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Official Study Materials</h3>
+                    <p>Official guides and practice materials directly from the exam providers are the most accurate resources for preparation.</p>
+                    <ul>
+                        <li>Official IELTS Practice Materials</li>
+                        <li>Official Guide to the TOEFL iBT Test</li>
+                        <li>The Official SAT Study Guide</li>
+                        <li>The Official Guide for GMAT Review</li>
+                        <li>Official GRE Super Power Pack</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Online Preparation Platforms</h3>
+                    <p>These platforms offer comprehensive preparation materials, practice tests, and personalized feedback.</p>
+                    <ul>
+                        <li>Magoosh (TOEFL, GRE, GMAT, SAT)</li>
+                        <li>Manhattan Prep (GRE, GMAT, SAT)</li>
+                        <li>Kaplan Test Prep (All major exams)</li>
+                        <li>Princeton Review (All major exams)</li>
+                        <li>E2Language (IELTS, PTE, TOEFL)</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Coaching Centers in India</h3>
+                    <p>These institutes offer specialized coaching for international exams with experienced instructors.</p>
+                    <ul>
+                        <li>Princeton Review India</li>
+                        <li>Jamboree Education</li>
+                        <li>Manya Group - The Princeton Review</li>
+                        <li>IMS India</li>
+                        <li>British Council (IELTS)</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Apps</h3>
+                    <p>Practice on the go with these mobile applications specifically designed for exam preparation.</p>
+                    <ul>
+                        <li>IELTS Prep & Practice (British Council)</li>
+                        <li>Magoosh GRE/GMAT/TOEFL Apps</li>
+                        <li>Manhattan Prep Test Simulation Apps</li>
+                        <li>Official SAT Practice (College Board)</li>
+                        <li>TOEFL® Practice Test (ETS)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="student-stories mt-2">
+            <h2>Success Stories: Indian Students Abroad</h2>
+            
+            <div class="story-cards">
+                <div class="story-card">
+                    <h3>From Mumbai to MIT</h3>
+                    <p class="student-name">Aditya Sharma</p>
+                    <p>After scoring 328 on the GRE and publishing two research papers during his undergraduate studies at IIT Bombay, Aditya secured a fully-funded MS in Computer Science at MIT. He now works at Google's AI research division.</p>
+                    <p><strong>Key Advice:</strong> "Start preparation early and focus on building a strong profile beyond just exam scores. Research experience and project work significantly boosted my application."</p>
+                </div>
+                
+                <div class="story-card">
+                    <h3>Delhi to Oxford Journey</h3>
+                    <p class="student-name">Priya Malhotra</p>
+                    <p>With an IELTS score of 8.5 and outstanding academics from Delhi University, Priya received the prestigious Rhodes Scholarship to pursue her master's in International Relations at Oxford University.</p>
+                    <p><strong>Key Advice:</strong> "For competitive scholarships, your personal statement and interview skills matter as much as your academic achievements. Showcase your leadership and community involvement."</p>
+                </div>
+                
+                <div class="story-card">
+                    <h3>Engineering to Harvard Business School</h3>
+                    <p class="student-name">Rajiv Mehta</p>
+                    <p>After working for four years as an engineer and scoring 760 on the GMAT, Rajiv was accepted to Harvard Business School's MBA program. He leveraged his unique experience in sustainable technology to stand out in the application process.</p>
+                    <p><strong>Key Advice:</strong> "For business school applications, your work experience and the impact you've created are crucial. Find ways to quantify your achievements and highlight leadership roles."</p>
+                </div>
+                
+                <div class="story-card">
+                    <h3>Medical Career in Canada</h3>
+                    <p class="student-name">Ananya Patel</p>
+                    <p>After completing her MBBS in India, Ananya cleared the IELTS with a score of 8.0 and successfully navigated the complex process of medical licensing in Canada. She is now completing her residency at the University of Toronto.</p>
+                    <p><strong>Key Advice:</strong> "For medical professionals, research the licensing requirements thoroughly for your destination country. The process can be long, so start early and stay persistent."</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Entrance Exams Portal</h3>
+                <p>Your comprehensive guide to entrance exams in India and abroad.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="entrance-exams.html">Entrance Exams</a></li>
+                    <li><a href="international-exams.html">Study Abroad</a></li>
+                    <li><a href="college-list.html">Colleges</a></li>
+                    <li><a href="exam-statistics.html">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Exam Calendar</a></li>
+                    <li><a href="#">Study Materials</a></li>
+                    <li><a href="#">Counseling Services</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: info@entranceexamsportal.com</p>
+                <p>Phone: +91 9876543210</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Entrance Exams Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const examsContainer = document.getElementById('international-exams-container');
+            
+            // Filter only international exams
+            const internationalExams = ENTRANCE_EXAMS.filter(exam => exam.category === "International");
+            
+            // Set exam types and difficulty for each exam
+            const examTypes = {
+                "IELTS": { type: "English Proficiency", difficulty: "Intermediate" },
+                "TOEFL": { type: "English Proficiency", difficulty: "Intermediate" },
+                "GRE": { type: "Graduate Admission", difficulty: "Advanced" },
+                "GMAT": { type: "Business School", difficulty: "Advanced" },
+                "SAT": { type: "Undergraduate Admission", difficulty: "Intermediate" },
+                "PTE Academic": { type: "English Proficiency", difficulty: "Intermediate" }
+            };
+            
+            // Render international exams
+            internationalExams.forEach(exam => {
+                const examType = examTypes[exam.name] || { type: "Other", difficulty: "Intermediate" };
+                
+                const examElement = document.createElement('div');
+                examElement.className = 'exam-detail';
+                examElement.id = exam.id;
+                examElement.setAttribute('data-name', exam.name);
+                examElement.setAttribute('data-type', examType.type);
+                examElement.setAttribute('data-difficulty', examType.difficulty);
+                
+                let cutoffHTML = '';
+                if (exam.cutoffs) {
+                    cutoffHTML = '<div class="exam-cutoffs mt-1">';
+                    cutoffHTML += '<h4>Score Requirements by Country/University</h4>';
+                    
+                    for (const category in exam.cutoffs) {
+                        cutoffHTML += `<div class="cutoff-category">`;
+                        cutoffHTML += `<h5>${category}</h5>`;
+                        cutoffHTML += `<ul>`;
+                        
+                        for (const institution in exam.cutoffs[category]) {
+                            cutoffHTML += `<li><strong>${institution}:</strong> ${exam.cutoffs[category][institution]}</li>`;
+                        }
+                        
+                        cutoffHTML += `</ul>`;
+                        cutoffHTML += `</div>`;
+                    }
+                    
+                    cutoffHTML += '</div>'; // end exam-cutoffs
+                }
+                
+                let examPatternHTML = '';
+                if (exam.examPattern) {
+                    examPatternHTML = '<div class="exam-pattern mt-1">';
+                    examPatternHTML += '<h4>Exam Pattern</h4>';
+                    examPatternHTML += '<ul>';
+                    
+                    exam.examPattern.forEach(pattern => {
+                        if (pattern.section) {
+                            examPatternHTML += `<li><strong>${pattern.section}:</strong> ${pattern.duration}, ${pattern.questions || pattern.tasks} ${pattern.questions ? 'questions' : 'tasks'}</li>`;
+                        }
+                    });
+                    
+                    examPatternHTML += '</ul>';
+                    examPatternHTML += '</div>';
+                }
+                
+                examElement.innerHTML = `
+                    <h3>${exam.name} - ${exam.fullName}</h3>
+                    <span class="badge badge-primary">${examType.type}</span>
+                    <span class="badge badge-secondary">Difficulty: ${examType.difficulty}</span>
+                    
+                    <div class="exam-description">
+                        <p>${exam.description}</p>
+                    </div>
+                    
+                    <div class="exam-info">
+                        <div class="exam-info-item">
+                            <strong>Conducted By:</strong> ${exam.conductedBy}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Eligibility:</strong> ${exam.eligibility}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Exam Fee:</strong> ${exam.applicationFee.general}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Exam Frequency:</strong> ${exam.examFrequency}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Exam Mode:</strong> ${exam.examMode}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Duration:</strong> ${exam.examDuration}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Total Score:</strong> ${exam.totalMarks}
+                        </div>
+                    </div>
+                    
+                    ${examPatternHTML}
+                    
+                    ${cutoffHTML}
+                    
+                    <div class="colleges-accepting">
+                        <h4>Top International Universities Accepting This Exam</h4>
+                        <div id="colleges-${exam.id}">
+                            Loading colleges...
+                        </div>
+                    </div>
+                    
+                    <div class="study-tips mt-1">
+                        <h4>Preparation Tips for ${exam.name}</h4>
+                        <ul>
+                            ${getTipsForExam(exam.name)}
+                        </ul>
+                    </div>
+                    
+                    <div class="exam-actions">
+                        <a href="${exam.officialWebsite}" target="_blank" class="btn primary-btn">Visit Official Website</a>
+                        <a href="college-list.html?exam=${exam.id}" class="btn secondary-btn">View All Accepting Universities</a>
+                    </div>
+                `;
+                
+                examsContainer.appendChild(examElement);
+            });
+            
+            // Update colleges for each exam
+            internationalExams.forEach(exam => {
+                const collegesContainer = document.getElementById(`colleges-${exam.id}`);
+                
+                if (collegesContainer) {
+                    // Find international colleges accepting this exam
+                    const acceptingColleges = COLLEGES.filter(college => 
+                        college.category === "International" && college.acceptedExams.includes(exam.name)
+                    );
+                    
+                    if (acceptingColleges.length > 0) {
+                        let collegesHTML = '<ul>';
+                        
+                        acceptingColleges.forEach(college => {
+                            collegesHTML += `<li><a href="college-list.html#${college.id}">${college.name}, ${college.location}</a></li>`;
+                        });
+                        
+                        collegesHTML += '</ul>';
+                        collegesContainer.innerHTML = collegesHTML;
+                    } else {
+                        collegesContainer.innerHTML = 'No university information available.';
+                    }
+                }
+            });
+            
+            // Function to get tips for specific exams
+            function getTipsForExam(examName) {
+                switch(examName) {
+                    case "IELTS":
+                        return `
+                            <li>Practice with past test papers to become familiar with the format.</li>
+                            <li>Improve your reading speed for the Reading section which has time constraints.</li>
+                            <li>For the Writing section, learn the structure of Task 1 and Task 2 essays.</li>
+                            <li>For Speaking, practice with a partner and record yourself to identify areas for improvement.</li>
+                            <li>Focus on academic vocabulary and formal writing style for the Academic module.</li>
+                        `;
+                    case "TOEFL":
+                        return `
+                            <li>Familiarize yourself with the digital test format and practice with official TOEFL iBT practice tests.</li>
+                            <li>For the Speaking section, practice answering questions within the time limit.</li>
+                            <li>Develop note-taking skills for the Listening and Speaking sections.</li>
+                            <li>Practice typing quickly and accurately for the Writing section.</li>
+                            <li>Build stamina to maintain focus throughout the 3-hour test.</li>
+                        `;
+                    case "GRE":
+                        return `
+                            <li>Master the basic math concepts required for the Quantitative Reasoning section.</li>
+                            <li>Build your vocabulary using flashcards and reading diverse materials.</li>
+                            <li>Practice writing analytical essays with proper structure and argumentation.</li>
+                            <li>Familiarize yourself with the computer-adaptive format of the test.</li>
+                            <li>Take multiple full-length practice tests to build endurance.</li>
+                        `;
+                    case "GMAT":
+                        return `
+                            <li>Focus on data sufficiency questions which are unique to the GMAT.</li>
+                            <li>Practice time management strategies as each section is timed separately.</li>
+                            <li>For Verbal section, pay special attention to Critical Reasoning and Sentence Correction.</li>
+                            <li>Master the Integrated Reasoning section which tests your data analysis skills.</li>
+                            <li>For the Analytical Writing Assessment, practice structuring arguments logically.</li>
+                        `;
+                    case "SAT":
+                        return `
+                            <li>Learn the format of the evidence-based reading and writing questions.</li>
+                            <li>For the Math section, focus on algebra, problem-solving, and data analysis.</li>
+                            <li>Practice with the official SAT practice tests from College Board.</li>
+                            <li>Learn to pace yourself during the test as time management is crucial.</li>
+                            <li>Read diverse materials to improve reading comprehension skills.</li>
+                        `;
+                    case "PTE Academic":
+                        return `
+                            <li>Familiarize yourself with the computer-based format and the types of questions.</li>
+                            <li>Practice speaking clearly and at a moderate pace for the Speaking section.</li>
+                            <li>Improve your typing speed for the Writing section.</li>
+                            <li>Develop strategies for multiple-choice questions in the Reading section.</li>
+                            <li>Take full-length practice tests to build confidence and stamina.</li>
+                        `;
+                    default:
+                        return `
+                            <li>Familiarize yourself with the exam format and question types.</li>
+                            <li>Create a study schedule and stick to it consistently.</li>
+                            <li>Use official study materials for the most accurate preparation.</li>
+                            <li>Take regular practice tests to track your progress.</li>
+                            <li>Join study groups or forums to share resources and strategies.</li>
+                        `;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

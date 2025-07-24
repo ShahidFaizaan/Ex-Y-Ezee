@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrance Exams | Indian Entrance Exams Portal</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Entrance Exams Portal</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="entrance-exams.html" class="active">Entrance Exams</a></li>
+                <li><a href="international-exams.html">Study Abroad</a></li>
+                <li><a href="college-list.html">Colleges</a></li>
+                <li><a href="exam-statistics.html">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Complete Guide to Entrance Exams in India</h2>
+            <p>Find detailed information about various competitive exams including fees, patterns, important dates, and eligibility criteria.</p>
+        </div>
+        
+        <div id="user-preferences" class="hidden"></div>
+        
+        <div class="exam-container">
+            <div class="exam-filter">
+                <div class="filters">
+                    <h3>Filter Exams</h3>
+                    
+                    <div class="filter-group">
+                        <label for="search-input">Search:</label>
+                        <input type="text" id="search-input" placeholder="Search by exam name...">
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Category</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Engineering"> Engineering</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Medical"> Medical</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Management"> Management</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Law"> Law</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Architecture"> Architecture</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Design"> Design</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Commerce"> Commerce</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Region</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="North India"> North India</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="South India"> South India</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="East India"> East India</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="West India"> West India</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="Central India"> Central India</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="Northeast India"> Northeast India</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="sort-select">Sort By:</label>
+                        <select id="sort-select">
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="name-desc">Name (Z-A)</option>
+                            <option value="category">Category</option>
+                            <option value="date">Upcoming Date</option>
+                        </select>
+                    </div>
+                    
+                    <div class="result-summary">
+                        Showing <span id="result-count">0</span> exams
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exam-list" id="exams-container">
+                <!-- Exam details will be populated dynamically using JavaScript -->
+            </div>
+        </div>
+        
+        <section class="tips-section mt-2">
+            <h2>Tips for Exam Preparation</h2>
+            
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button" data-tab="general-tips">General Tips</button>
+                    <button class="tab-button" data-tab="subject-wise">Subject-wise Tips</button>
+                    <button class="tab-button" data-tab="mental-health">Mental Health</button>
+                    <button class="tab-button" data-tab="resources">Resources</button>
+                </div>
+                
+                <div id="general-tips" class="tab-content">
+                    <h3>General Preparation Tips</h3>
+                    <ul>
+                        <li><strong>Start Early:</strong> Begin your preparation at least 12-18 months before the exam.</li>
+                        <li><strong>Know the Syllabus:</strong> Thoroughly understand the exam pattern and syllabus.</li>
+                        <li><strong>Create a Schedule:</strong> Make a realistic study plan and stick to it.</li>
+                        <li><strong>Quality Resources:</strong> Use standard books and reliable study materials.</li>
+                        <li><strong>Regular Practice:</strong> Solve previous years' question papers and take mock tests.</li>
+                        <li><strong>Analyze Performance:</strong> Regularly review your performance to identify and work on weak areas.</li>
+                        <li><strong>Stay Updated:</strong> Keep track of any changes in exam pattern or syllabus.</li>
+                        <li><strong>Time Management:</strong> Learn to manage time efficiently during preparation and in the exam.</li>
+                    </ul>
+                </div>
+                
+                <div id="subject-wise" class="tab-content">
+                    <h3>Subject-wise Preparation Tips</h3>
+                    
+                    <h4>Mathematics</h4>
+                    <ul>
+                        <li>Focus on understanding concepts rather than memorizing formulas.</li>
+                        <li>Practice a variety of problems daily to build problem-solving skills.</li>
+                        <li>Create a formula notebook for quick revision.</li>
+                    </ul>
+                    
+                    <h4>Physics</h4>
+                    <ul>
+                        <li>Understand the fundamental concepts and principles thoroughly.</li>
+                        <li>Pay special attention to derivations and numerical problems.</li>
+                        <li>Connect theoretical concepts with real-world applications.</li>
+                    </ul>
+                    
+                    <h4>Chemistry</h4>
+                    <ul>
+                        <li>Inorganic Chemistry: Create concise notes for periodic properties and reactions.</li>
+                        <li>Organic Chemistry: Focus on reaction mechanisms and properties of compounds.</li>
+                        <li>Physical Chemistry: Practice numerical problems regularly.</li>
+                    </ul>
+                    
+                    <h4>Biology</h4>
+                    <ul>
+                        <li>Create diagrams and flowcharts for complex processes.</li>
+                        <li>Focus on understanding rather than rote memorization.</li>
+                        <li>Stay updated with recent advancements in biological sciences.</li>
+                    </ul>
+                    
+                    <h4>English & Verbal Ability</h4>
+                    <ul>
+                        <li>Improve vocabulary through regular reading.</li>
+                        <li>Practice comprehension passages daily.</li>
+                        <li>Work on grammar rules and their applications.</li>
+                    </ul>
+                    
+                    <h4>Logical Reasoning & Aptitude</h4>
+                    <ul>
+                        <li>Solve puzzles and brain teasers to improve logical thinking.</li>
+                        <li>Practice different types of reasoning questions daily.</li>
+                        <li>Develop shortcuts for calculations.</li>
+                    </ul>
+                </div>
+                
+                <div id="mental-health" class="tab-content">
+                    <h3>Mental Health Tips During Exam Preparation</h3>
+                    <ul>
+                        <li><strong>Take Regular Breaks:</strong> Follow the Pomodoro technique - study for 25 minutes, then take a 5-minute break.</li>
+                        <li><strong>Physical Activity:</strong> Incorporate at least 30 minutes of physical activity daily.</li>
+                        <li><strong>Balanced Diet:</strong> Eat nutritious meals and stay hydrated.</li>
+                        <li><strong>Adequate Sleep:</strong> Ensure 7-8 hours of sleep every night.</li>
+                        <li><strong>Mindfulness & Meditation:</strong> Practice mindfulness or meditation to reduce stress.</li>
+                        <li><strong>Social Connections:</strong> Maintain healthy social connections with family and friends.</li>
+                        <li><strong>Avoid Comparison:</strong> Focus on your progress rather than comparing with others.</li>
+                        <li><strong>Seek Help:</strong> Don't hesitate to talk to teachers, parents, or counselors if feeling overwhelmed.</li>
+                        <li><strong>Positive Self-talk:</strong> Practice positive affirmations and believe in your abilities.</li>
+                        <li><strong>Celebrate Small Wins:</strong> Acknowledge and celebrate your achievements, no matter how small.</li>
+                    </ul>
+                </div>
+                
+                <div id="resources" class="tab-content">
+                    <h3>Recommended Resources</h3>
+                    
+                    <h4>Online Platforms</h4>
+                    <ul>
+                        <li>BYJU'S - Comprehensive learning app with video lessons and practice questions.</li>
+                        <li>Unacademy - Platform with courses by top educators.</li>
+                        <li>Khan Academy - Free educational resources for multiple subjects.</li>
+                        <li>Vedantu - Live online classes and personalized learning.</li>
+                        <li>Toppr - Adaptive learning platform with practice questions.</li>
+                    </ul>
+                    
+                    <h4>Books & Study Materials</h4>
+                    <ul>
+                        <li>JEE/NEET: NCERT textbooks are essential foundation materials.</li>
+                        <li>Engineering: H.C. Verma for Physics, R.D. Sharma for Mathematics.</li>
+                        <li>Medical: Trueman's Biology, Morrison & Boyd for Organic Chemistry.</li>
+                        <li>Management: Arun Sharma for Quantitative Aptitude, Norman Lewis for English.</li>
+                        <li>Law: Universal's Legal Reasoning, Bare Acts for legal provisions.</li>
+                    </ul>
+                    
+                    <h4>Mock Tests & Previous Papers</h4>
+                    <ul>
+                        <li>Official websites of respective examination bodies.</li>
+                        <li>TestPrep platforms like Embibe, Gradeup, and Career360.</li>
+                        <li>Coaching institutes' test series.</li>
+                    </ul>
+                    
+                    <h4>YouTube Channels</h4>
+                    <ul>
+                        <li>Physics Galaxy by Ashish Arora</li>
+                        <li>Khan Academy India</li>
+                        <li>Unacademy JEE</li>
+                        <li>NEETprep</li>
+                        <li>Study IQ Education</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Entrance Exams Portal</h3>
+                <p>Your comprehensive guide to entrance exams in India and abroad.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="entrance-exams.html">Entrance Exams</a></li>
+                    <li><a href="international-exams.html">Study Abroad</a></li>
+                    <li><a href="college-list.html">Colleges</a></li>
+                    <li><a href="exam-statistics.html">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Exam Calendar</a></li>
+                    <li><a href="#">Study Materials</a></li>
+                    <li><a href="#">Counseling Services</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: info@entranceexamsportal.com</p>
+                <p>Phone: +91 9876543210</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Entrance Exams Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const examsContainer = document.getElementById('exams-container');
+            
+            // Display only Indian entrance exams
+            const indianExams = ENTRANCE_EXAMS.filter(exam => exam.category !== "International");
+            
+            // Render exams
+            indianExams.forEach(exam => {
+                const examElement = document.createElement('div');
+                examElement.className = 'exam-detail';
+                examElement.id = exam.id;
+                examElement.setAttribute('data-name', exam.name);
+                examElement.setAttribute('data-category', exam.category);
+                examElement.setAttribute('data-regions', exam.regions.join(','));
+                
+                let cutoffHTML = '';
+                if (exam.cutoffs) {
+                    cutoffHTML = '<div class="exam-cutoffs mt-1">';
+                    cutoffHTML += '<h4>Previous Year Cutoffs</h4>';
+                    cutoffHTML += '<div class="cutoff-years">';
+                    
+                    for (const year in exam.cutoffs) {
+                        cutoffHTML += `<div class="cutoff-year">`;
+                        cutoffHTML += `<h5>${year}</h5>`;
+                        cutoffHTML += `<ul>`;
+                        
+                        for (const category in exam.cutoffs[year]) {
+                            cutoffHTML += `<li><strong>${category}:</strong> ${exam.cutoffs[year][category]}</li>`;
+                        }
+                        
+                        cutoffHTML += `</ul>`;
+                        cutoffHTML += `</div>`;
+                    }
+                    
+                    cutoffHTML += '</div>'; // end cutoff-years
+                    cutoffHTML += '</div>'; // end exam-cutoffs
+                }
+                
+                let examPatternHTML = '';
+                if (exam.examPattern) {
+                    examPatternHTML = '<div class="exam-pattern mt-1">';
+                    examPatternHTML += '<h4>Exam Pattern</h4>';
+                    examPatternHTML += '<ul>';
+                    
+                    exam.examPattern.forEach(pattern => {
+                        if (pattern.subject) {
+                            examPatternHTML += `<li><strong>${pattern.subject}:</strong> ${pattern.questions} questions, ${pattern.marks} marks</li>`;
+                        } else if (pattern.section) {
+                            examPatternHTML += `<li><strong>${pattern.section}:</strong> ${pattern.questions} questions, Duration: ${pattern.duration}</li>`;
+                        }
+                    });
+                    
+                    examPatternHTML += '</ul>';
+                    examPatternHTML += '</div>';
+                }
+                
+                examElement.innerHTML = `
+                    <h3>${exam.name} - ${exam.fullName}</h3>
+                    <span class="badge badge-primary">${exam.category}</span>
+                    
+                    <div class="exam-description">
+                        <p>${exam.description}</p>
+                    </div>
+                    
+                    <div class="exam-info">
+                        <div class="exam-info-item">
+                            <strong>Conducted By:</strong> ${exam.conductedBy}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Eligibility:</strong> ${exam.eligibility}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Application Fee:</strong> 
+                            <ul>
+                                <li>General: ${exam.applicationFee.general}</li>
+                                ${exam.applicationFee.reserved ? `<li>Reserved: ${exam.applicationFee.reserved}</li>` : ''}
+                            </ul>
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Exam Frequency:</strong> ${exam.examFrequency}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Exam Mode:</strong> ${exam.examMode}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Duration:</strong> ${exam.examDuration}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Languages:</strong> ${exam.languages.join(', ')}
+                        </div>
+                        <div class="exam-info-item">
+                            <strong>Total Marks:</strong> ${exam.totalMarks}
+                        </div>
+                    </div>
+                    
+                    ${examPatternHTML}
+                    
+                    ${cutoffHTML}
+                    
+                    <div class="colleges-accepting">
+                        <h4>Top Colleges Accepting This Exam</h4>
+                        <div id="colleges-${exam.id}">
+                            Loading colleges...
+                        </div>
+                    </div>
+                    
+                    <div class="exam-actions">
+                        <a href="${exam.officialWebsite}" target="_blank" class="btn primary-btn">Visit Official Website</a>
+                        <a href="college-list.html?exam=${exam.id}" class="btn secondary-btn">View All Accepting Colleges</a>
+                    </div>
+                `;
+                
+                examsContainer.appendChild(examElement);
+            });
+            
+            // Update colleges for each exam
+            indianExams.forEach(exam => {
+                const collegesContainer = document.getElementById(`colleges-${exam.id}`);
+                
+                if (collegesContainer) {
+                    // Find colleges accepting this exam
+                    const acceptingColleges = COLLEGES.filter(college => 
+                        college.acceptedExams.includes(exam.name) && college.category === exam.category
+                    ).slice(0, 5); // Limit to top 5
+                    
+                    if (acceptingColleges.length > 0) {
+                        let collegesHTML = '<ul>';
+                        
+                        acceptingColleges.forEach(college => {
+                            collegesHTML += `<li><a href="college-list.html#${college.id}">${college.name}, ${college.location}</a></li>`;
+                        });
+                        
+                        collegesHTML += '</ul>';
+                        collegesContainer.innerHTML = collegesHTML;
+                    } else {
+                        collegesContainer.innerHTML = 'No top colleges information available.';
+                    }
+                }
+            });
+            
+            // Update result count
+            document.getElementById('result-count').textContent = indianExams.length;
+        });
+    </script>
+</body>
+</html>

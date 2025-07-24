@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrance Exams Portal | Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Entrance Exams Portal</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pages/entrance-exams.html">Entrance Exams</a></li>
+                <li><a href="pages/international-exams.html">Study Abroad</a></li>
+                <li><a href="pages/college-list.html">Colleges</a></li>
+                <li><a href="pages/exam-statistics.html">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Plan Your Educational Journey</h2>
+                <p>Comprehensive information about entrance exams in India and abroad</p>
+                <div class="cta-buttons">
+                    <a href="#signup" class="btn primary-btn">Sign Up Now</a>
+                    <a href="pages/entrance-exams.html" class="btn secondary-btn">Explore Exams</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-book-open"></i>
+                <h3>Exam Details</h3>
+                <p>Comprehensive information about fees, eligibility, and dates for various entrance exams.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-university"></i>
+                <h3>College Information</h3>
+                <p>Discover colleges accepting your exam scores and get detailed information about them.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-globe"></i>
+                <h3>Study Abroad</h3>
+                <p>Learn about international exams and universities for pursuing education overseas.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Exam Statistics</h3>
+                <p>Regional statistics about exam participation and insights about cutoff trends.</p>
+            </div>
+        </section>
+
+        <section id="signup" class="signup-section">
+            <div class="signup-image">
+                <img src="assets/signup_image.png" alt="Notebook and pen">
+            </div>
+            <div class="signup-form">
+                <h2>Sign Up for Updates</h2>
+                <p>Stay informed about exam dates, college admissions, and educational opportunities.</p>
+                <form id="user-signup-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Interested Areas</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="interests" value="Engineering"> Engineering</label>
+                            <label><input type="checkbox" name="interests" value="Medical"> Medical</label>
+                            <label><input type="checkbox" name="interests" value="Management"> Management</label>
+                            <label><input type="checkbox" name="interests" value="Law"> Law</label>
+                            <label><input type="checkbox" name="interests" value="Humanities"> Humanities</label>
+                            <label><input type="checkbox" name="interests" value="Architecture"> Architecture</label>
+                            <label><input type="checkbox" name="interests" value="International"> Study Abroad</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Sign Up</button>
+                </form>
+                <div id="signup-success" class="hidden">
+                    <h3>Thank You for Signing Up!</h3>
+                    <p>We'll keep you updated with the latest information about entrance exams and educational
+                        opportunities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-exams">
+            <h2>Popular Entrance Exams</h2>
+            <div class="exam-cards">
+                <div class="exam-card">
+                    <h3>JEE Main</h3>
+                    <p>Joint Entrance Examination for engineering college admissions.</p>
+                    <a href="pages/entrance-exams.html#jee-main" class="btn secondary-btn">Learn More</a>
+                </div>
+                <div class="exam-card">
+                    <h3>NEET UG</h3>
+                    <p>National Eligibility cum Entrance Test for medical courses.</p>
+                    <a href="pages/entrance-exams.html#neet-ug" class="btn secondary-btn">Learn More</a>
+                </div>
+                <div class="exam-card">
+                    <h3>CAT</h3>
+                    <p>Common Admission Test for MBA programs in top business schools.</p>
+                    <a href="pages/entrance-exams.html#cat" class="btn secondary-btn">Learn More</a>
+                </div>
+                <div class="exam-card">
+                    <h3>CLAT</h3>
+                    <p>Common Law Admission Test for law school admissions.</p>
+                    <a href="pages/entrance-exams.html#clat" class="btn secondary-btn">Learn More</a>
+                </div>
+                <div class="exam-card">
+                    <h3>IELTS</h3>
+                    <p>International English Language Testing System for studying abroad.</p>
+                    <a href="pages/international-exams.html#ielts" class="btn secondary-btn">Learn More</a>
+                </div>
+                <div class="exam-card">
+                    <h3>GRE</h3>
+                    <p>Graduate Record Examination for graduate programs abroad.</p>
+                    <a href="pages/international-exams.html#gre" class="btn secondary-btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Chatbot Icon -->
+    <div id="chat-icon" class="chat-icon" onclick="toggleChatbot()">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div id="chat-container" class="chat-container hidden">
+        <div class="chat-header">
+            <h3>Here to Assist</h3>
+            <button id="close-btn" onclick="toggleChatbot()">X</button>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <div class="chat-message bot">Hello! Ask me about entrance exams or colleges.</div>
+        </div>
+        <input type="text" id="user-input" placeholder="Type your question..." onkeypress="handleKeyPress(event)">
+        <button id="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Link chatbot.js -->
+    <script src="js/chatbot.js"></script>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Entrance Exams Portal</h3>
+                <p>Your comprehensive guide to entrance exams in India and abroad.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/entrance-exams.html">Entrance Exams</a></li>
+                    <li><a href="pages/international-exams.html">Study Abroad</a></li>
+                    <li><a href="pages/college-list.html">Colleges</a></li>
+                    <li><a href="pages/exam-statistics.html">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Exam Calendar</a></li>
+                    <li><a href="#">Study Materials</a></li>
+                    <li><a href="#">Counseling Services</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: info@entranceexamsportal.com</p>
+                <p>Phone: +91 9876543210</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Entrance Exams Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/data.js"></script>
+</body>
+
+</html>

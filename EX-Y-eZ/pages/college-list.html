@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colleges | Indian Entrance Exams Portal</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Entrance Exams Portal</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="entrance-exams.html">Entrance Exams</a></li>
+                <li><a href="international-exams.html">Study Abroad</a></li>
+                <li><a href="college-list.html" class="active">Colleges</a></li>
+                <li><a href="exam-statistics.html">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Top Colleges and Universities</h2>
+            <p>Comprehensive information about premier educational institutions in India and abroad.</p>
+        </div>
+        
+        <div id="user-preferences" class="hidden"></div>
+        
+        <div class="college-container">
+            <div class="college-filter">
+                <div class="filters">
+                    <h3>Filter Colleges</h3>
+                    
+                    <div class="filter-group">
+                        <label for="search-input">Search:</label>
+                        <input type="text" id="search-input" placeholder="Search by college name...">
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Category</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Engineering"> Engineering</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Medical"> Medical</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Management"> Management</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Law"> Law</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Design"> Design</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="Commerce"> Commerce</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="International"> International</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Region</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="North India"> North India</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="South India"> South India</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="East India"> East India</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="West India"> West India</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="Central India"> Central India</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="Northeast India"> Northeast India</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="region" value="International"> International</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Accepted Exams</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="exam" value="JEE Advanced"> JEE Advanced</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="exam" value="JEE Main"> JEE Main</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="exam" value="NEET-UG"> NEET-UG</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="exam" value="CAT"> CAT</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="exam" value="CLAT"> CLAT</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="exam" value="GATE"> GATE</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="exam" value="IELTS"> IELTS</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="exam" value="GRE"> GRE</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="exam" value="GMAT"> GMAT</label>
+                            <label><input type="checkbox" class="filter-checkbox" data-filter="exam" value="SAT/ACT"> SAT/ACT</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="sort-select">Sort By:</label>
+                        <select id="sort-select">
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="name-desc">Name (Z-A)</option>
+                            <option value="established">Established Year</option>
+                            <option value="ranking">Ranking</option>
+                        </select>
+                    </div>
+                    
+                    <div class="result-summary">
+                        Showing <span id="result-count">0</span> colleges
+                    </div>
+                </div>
+            </div>
+            
+            <div class="college-list" id="colleges-container">
+                <!-- College details will be populated dynamically using JavaScript -->
+            </div>
+        </div>
+        
+        <section class="top-colleges-section mt-2">
+            <h2>Top Colleges by Category</h2>
+            
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button" data-tab="engineering-colleges">Engineering</button>
+                    <button class="tab-button" data-tab="medical-colleges">Medical</button>
+                    <button class="tab-button" data-tab="management-colleges">Management</button>
+                    <button class="tab-button" data-tab="law-colleges">Law</button>
+                    <button class="tab-button" data-tab="international-colleges">International</button>
+                </div>
+                
+                <div id="engineering-colleges" class="tab-content">
+                    <h3>Top Engineering Colleges in India</h3>
+                    <div class="custom-table-container">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Key Exams</th>
+                                    <th>Website</th>
+                                </tr>
+                            </thead>
+                            <tbody id="top-engineering-colleges">
+                                <!-- Will be filled by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div id="medical-colleges" class="tab-content">
+                    <h3>Top Medical Colleges in India</h3>
+                    <div class="custom-table-container">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Key Exams</th>
+                                    <th>Website</th>
+                                </tr>
+                            </thead>
+                            <tbody id="top-medical-colleges">
+                                <!-- Will be filled by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div id="management-colleges" class="tab-content">
+                    <h3>Top Management Colleges in India</h3>
+                    <div class="custom-table-container">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Key Exams</th>
+                                    <th>Website</th>
+                                </tr>
+                            </thead>
+                            <tbody id="top-management-colleges">
+                                <!-- Will be filled by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div id="law-colleges" class="tab-content">
+                    <h3>Top Law Colleges in India</h3>
+                    <div class="custom-table-container">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Key Exams</th>
+                                    <th>Website</th>
+                                </tr>
+                            </thead>
+                            <tbody id="top-law-colleges">
+                                <!-- Will be filled by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div id="international-colleges" class="tab-content">
+                    <h3>Top International Universities</h3>
+                    <div class="custom-table-container">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>QS Rank</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Key Exams</th>
+                                    <th>Website</th>
+                                </tr>
+                            </thead>
+                            <tbody id="top-international-colleges">
+                                <!-- Will be filled by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="college-selection-tips mt-2">
+            <h2>Tips for College Selection</h2>
+            
+            <div class="tips-content">
+                <div class="tip-item">
+                    <h3><i class="fas fa-search"></i> Research Thoroughly</h3>
+                    <p>Look beyond rankings. Research faculty credentials, research output, infrastructure, placement records, and alumni network of potential colleges.</p>
+                </div>
+                
+                <div class="tip-item">
+                    <h3><i class="fas fa-graduation-cap"></i> Academic Fit</h3>
+                    <p>Consider if the college offers the specific program or specialization you're interested in. Look at the curriculum, teaching methodology, and opportunities for practical learning.</p>
+                </div>
+                
+                <div class="tip-item">
+                    <h3><i class="fas fa-rupee-sign"></i> Financial Considerations</h3>
+                    <p>Evaluate the total cost including tuition, accommodation, and other expenses. Research scholarship opportunities, education loans, and financial aid options.</p>
+                </div>
+                
+                <div class="tip-item">
+                    <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                    <p>Consider the location of the college in terms of climate, distance from home, cost of living, language barriers, and safety aspects, especially for female students.</p>
+                </div>
+                
+                <div class="tip-item">
+                    <h3><i class="fas fa-briefcase"></i> Placement Records</h3>
+                    <p>Check the college's placement statistics, including companies that recruit, average package offered, and percentage of students placed.</p>
+                </div>
+                
+                <div class="tip-item">
+                    <h3><i class="fas fa-hands-helping"></i> Alumni Network</h3>
+                    <p>A strong alumni network can provide mentorship, internship opportunities, and job references. Research the achievements of the college's alumni.</p>
+                </div>
+                
+                <div class="tip-item">
+                    <h3><i class="fas fa-flask"></i> Research Opportunities</h3>
+                    <p>If you're interested in research, check the college's research output, collaborations, labs, and funding opportunities for student projects.</p>
+                </div>
+                
+                <div class="tip-item">
+                    <h3><i class="fas fa-globe"></i> International Exposure</h3>
+                    <p>Look for international collaborations, exchange programs, and opportunities for global exposure that the college offers.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Entrance Exams Portal</h3>
+                <p>Your comprehensive guide to entrance exams in India and abroad.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="entrance-exams.html">Entrance Exams</a></li>
+                    <li><a href="international-exams.html">Study Abroad</a></li>
+                    <li><a href="college-list.html">Colleges</a></li>
+                    <li><a href="exam-statistics.html">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Exam Calendar</a></li>
+                    <li><a href="#">Study Materials</a></li>
+                    <li><a href="#">Counseling Services</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: info@entranceexamsportal.com</p>
+                <p>Phone: +91 9876543210</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Entrance Exams Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collegesContainer = document.getElementById('colleges-container');
+            
+            // Get exam filter from URL if present
+            const urlParams = new URLSearchParams(window.location.search);
+            const examFilter = urlParams.get('exam');
+            
+            // Add data attributes to colleges and render them
+            COLLEGES.forEach(college => {
+                const collegeElement = document.createElement('div');
+                collegeElement.className = 'college-detail';
+                collegeElement.id = college.id;
+                collegeElement.setAttribute('data-name', college.name);
+                collegeElement.setAttribute('data-category', college.category);
+                
+                // Get region from location
+                let region = 'International';
+                if (college.location.includes('India')) {
+                    for (const [regionName, states] of Object.entries(REGION_STATES)) {
+                        for (const state of states) {
+                            if (college.location.includes(state)) {
+                                region = regionName;
+                                break;
+                            }
+                        }
+                    }
+                }
+                collegeElement.setAttribute('data-region', region);
+                
+                // Add accepted exams as data attribute
+                collegeElement.setAttribute('data-exams', college.acceptedExams.join(','));
+                
+                // Add ranking for sorting if available
+                if (college.ranking) {
+                    const nirf = college.ranking['NIRF 2023'] || 1000;
+                    const qs = college.ranking['QS World 2023'] || 5000;
+                    collegeElement.setAttribute('data-ranking', Math.min(nirf, qs));
+                } else {
+                    collegeElement.setAttribute('data-ranking', 9999);
+                }
+                
+                let rankingHTML = '';
+                if (college.ranking) {
+                    rankingHTML = '<div class="college-ranking">';
+                    rankingHTML += '<h4>Rankings</h4>';
+                    rankingHTML += '<ul>';
+                    
+                    for (const [rankingSystem, rank] of Object.entries(college.ranking)) {
+                        rankingHTML += `<li><strong>${rankingSystem}:</strong> ${rank}</li>`;
+                    }
+                    
+                    rankingHTML += '</ul>';
+                    rankingHTML += '</div>';
+                }
+                
+                let alumniHTML = '';
+                if (college.notableAlumni) {
+                    alumniHTML = '<div class="college-alumni mt-1">';
+                    alumniHTML += '<h4>Notable Alumni</h4>';
+                    alumniHTML += '<p>' + college.notableAlumni.join(', ') + '</p>';
+                    alumniHTML += '</div>';
+                }
+                
+                collegeElement.innerHTML = `
+                    <div class="college-header">
+                        <div class="college-header-info">
+                            <h3>${college.name}</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> ${college.location}</p>
+                            <p><i class="fas fa-calendar-alt"></i> Established: ${college.established}</p>
+                            <span class="badge badge-primary">${college.category}</span>
+                        </div>
+                        <div class="college-header-actions">
+                            <a href="${college.website}" target="_blank" class="btn primary-btn">Visit Website</a>
+                        </div>
+                    </div>
+                    
+                    <div class="college-description mb-1">
+                        <p>${college.description}</p>
+                    </div>
+                    
+                    <div class="college-section">
+                        <h4>Programs Offered</h4>
+                        <p>${college.programs.join(', ')}</p>
+                    </div>
+                    
+                    <div class="college-section">
+                        <h4>Entrance Exams Accepted</h4>
+                        <p>${college.acceptedExams.join(', ')}</p>
+                    </div>
+                    
+                    <div class="college-section">
+                        <h4>Facilities</h4>
+                        <p>${college.facilities.join(', ')}</p>
+                    </div>
+                    
+                    ${rankingHTML}
+                    
+                    ${alumniHTML}
+                    
+                    ${college.avgPlacement ? `
+                    <div class="college-section">
+                        <h4>Average Placement</h4>
+                        <p>${college.avgPlacement}</p>
+                    </div>
+                    ` : ''}
+                    
+                    <div class="college-stats">
+                        <div class="college-stat">
+                            <div class="label">Programs</div>
+                            <div class="value">${college.programs.length}</div>
+                        </div>
+                        <div class="college-stat">
+                            <div class="label">Facilities</div>
+                            <div class="value">${college.facilities.length}</div>
+                        </div>
+                        <div class="college-stat">
+                            <div class="label">Exams</div>
+                            <div class="value">${college.acceptedExams.length}</div>
+                        </div>
+                    </div>
+                `;
+                
+                collegesContainer.appendChild(collegeElement);
+            });
+            
+            // Update result count
+            document.getElementById('result-count').textContent = COLLEGES.length;
+            
+            // Check if we need to filter by exam
+            if (examFilter) {
+                const exam = ENTRANCE_EXAMS.find(e => e.id === examFilter);
+                if (exam) {
+                    document.querySelectorAll(`.filter-checkbox[data-filter="exam"][value="${exam.name}"]`).forEach(checkbox => {
+                        checkbox.checked = true;
+                    });
+                    
+                    // Trigger filtering
+                    const event = new Event('change');
+                    document.querySelector('.filter-checkbox[data-filter="exam"]').dispatchEvent(event);
+                    
+                    // Add a message
+                    const message = document.createElement('div');
+                    message.className = 'filter-message';
+                    message.innerHTML = `<p>Showing colleges accepting <strong>${exam.name}</strong>. <a href="college-list.html">Clear filter</a></p>`;
+                    collegesContainer.insertBefore(message, collegesContainer.firstChild);
+                }
+            }
+            
+            // Fill top colleges tables
+            fillTopCollegesTable('Engineering', 'top-engineering-colleges');
+            fillTopCollegesTable('Medical', 'top-medical-colleges');
+            fillTopCollegesTable('Management', 'top-management-colleges');
+            fillTopCollegesTable('Law', 'top-law-colleges');
+            fillTopCollegesTable('International', 'top-international-colleges');
+            
+            function fillTopCollegesTable(category, tableId) {
+                const tableBody = document.getElementById(tableId);
+                if (!tableBody) return;
+                
+                // Get colleges of the specified category
+                let categoryColleges = COLLEGES.filter(college => college.category === category);
+                
+                // Sort by ranking if available
+                categoryColleges.sort((a, b) => {
+                    const aRank = a.ranking ? (a.ranking['NIRF 2023'] || a.ranking['QS World 2023'] || 1000) : 1000;
+                    const bRank = b.ranking ? (b.ranking['NIRF 2023'] || b.ranking['QS World 2023'] || 1000) : 1000;
+                    return aRank - bRank;
+                });
+                
+                // Take top 10
+                categoryColleges = categoryColleges.slice(0, 10);
+                
+                // Create table rows
+                let tableHTML = '';
+                
+                categoryColleges.forEach((college, index) => {
+                    const rank = college.ranking ? 
+                        (college.ranking['NIRF 2023'] || college.ranking['QS World 2023'] || (index + 1)) : 
+                        (index + 1);
+                    
+                    tableHTML += `
+                        <tr>
+                            <td>${rank}</td>
+                            <td><a href="#${college.id}">${college.name}</a></td>
+                            <td>${college.location}</td>
+                            <td>${college.acceptedExams.slice(0, 3).join(', ')}</td>
+                            <td><a href="${college.website}" target="_blank">Visit</a></td>
+                        </tr>
+                    `;
+                });
+                
+                tableBody.innerHTML = tableHTML;
+            }
+        });
+    </script>
+</body>
+</html>
